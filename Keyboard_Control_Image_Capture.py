@@ -1,12 +1,13 @@
 from djitellopy import tello
 import Key_Press_Mod as kp
-from time import sleep
+import time
 import cv2
 
 kp.init()
 me = tello.Tello()
 me.connect()
 print(me.get_battery())
+global img
 
 me.streamon()
 
@@ -37,8 +38,12 @@ def getKeyboardInput():
 
     if kp.getKey("q"):
         me.land()
+        time.sleep(3)
     if kp.getKey("e"):
         me.takeoff()
+
+    if kp.getKey("z"):
+        cv2.imwrite(f'Resources/Images/{time.time()}.jpg', img)
 
     return [lr, fb, ud, yv]
 
