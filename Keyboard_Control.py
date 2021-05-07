@@ -37,7 +37,6 @@ def getKeyboardInput():
     if kp.getKey("e"):
         me.takeoff()
 
-
     return [lr, fb, ud, yv]
 
 
