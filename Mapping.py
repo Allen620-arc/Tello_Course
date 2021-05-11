@@ -65,7 +65,7 @@ def getKeyboardInput():
 
     if kp.getKey("q"):
         me.land()
-        sleep(3)
+        sleep(1)
 
     if kp.getKey("e"):
         me.takeoff()
